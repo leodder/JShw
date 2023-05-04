@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .form1{border: 3px solid black;
+            display: flex;
+    justify-content: space-between;
+    align-items: center;}
+    .change{border: 3px solid black;
+            display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    }
+    </style>
+</head>
+
+<body>
+    <!-- <script>
+        let h = Number(prompt("請輸入身高\"公尺\""))
+        let w = parseInt(prompt("請輸入體重\"公斤\""))
+        let bmi = (w / (h * h))
+        window.alert("BMI" + bmi)
+        if (bmi >= 35) {
+            window.alert("體重重度肥胖")
+        } else if (bmi >= 30) {
+            window.alert("體重中度肥胖")
+        } else if (bmi >= 27) {
+            window.alert("體重輕度肥胖")
+        } else if (bmi >= 24) {
+            window.alert("體重過重")
+        } else if (bmi >= 18.5) {
+            window.alert("體重正常")
+        } else {
+            window.alert("體重過輕")
+        }
+    </script> -->
+<h3>1.讓使用者可以輸入自己的體重及身高，根據算出來的BMI值顯示下列訊息
+</h3>
+    <form class="form1">
+<label for="text1">身高:</label>
+<input type="text" id="text1" placeholder="輸入身高(公尺,ex:1.85)">
+<label for="text2">體重:</label>
+<input type="text" id="text2" placeholder="輸入體重(公斤,ex:80)">
+<input type="button" value="計算BMI" id="button1">
+<div id="div1"></div>
+
+
+    <script>
+        let theDiv = document.getElementById("div1");
+        let t1 = document.getElementById("text1");
+        let t2 = document.getElementById("text2");
+        let b1 = document.getElementById("button1");
+
+        b1.addEventListener("click", function() {
+let bmi = (Number(t2.value) / (Number(t1.value) ^2));
+document.write("BMI" + bmi)  
+theDiv.innerHTML = "bmi";
+if (bmi >= 35) {
+            document.write("體重重度肥胖")
+        } else if (bmi >= 30) {
+            document.write("體重中度肥胖")
+        } else if (bmi >= 27) {
+            document.write("體重輕度肥胖")
+        } else if (bmi >= 24) {
+            document.write("體重過重")
+        } else if (bmi >= 18.5) {
+            document.write("體重正常")
+        } else {
+            document.write("體重過輕")
+        }
+})
+</script>
+</form>
+
+<h3>2.用*畫出下列圖型</h3>
+<script>
+function tree(){
+for(let a = 1; a <= 8; a++){
+    for(let sp= 8;sp>=a;sp--){
+        document.write("&nbsp")
+    };
+
+
+    for(let b = 1; b <= a; b++){
+        document.write("*");
+        }  
+      
+    document.write("<br>")
+    }   
+return a>=b
+}document.write(tree())
+</script>
+<script>
+document.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*")
+document.write("<br>")
+document.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*")
+</script>
+
+
+
+
+
+<h3>3.猜數字遊戲</h3>
+<input type="button" value="開始遊戲" id="button2">
+<script>
+let b2 = document.getElementById("button2")
+let answer = Math.floor(Math.random() * 100) 
+let t3 =Number(("0到100之整數"))
+b2.addEventListener("click", function() {
+
+// while (answer !== guessAnswer) {
+// 	if (answer > t3) {
+// 		wimdow.alert("太小了") 
+// 	} else if (answer < t3) {
+// 		window.alert("太大了")
+// 	} 
+// 	answer = t3
+// document.write("猜中了")}
+// if(t3 > answer){
+//     window.alert("太大了~")
+// }else if (t3 < answer){
+//     window.alert("太小了~")
+// }else{
+//     window.alert("猜中了")
+// }
+
+while(true){
+    t3=prompt("請輸入猜測的數字(1~100)，輸入0離開遊戲");
+    if(t3 == 0){
+        window.alert("離開遊戲");
+        break;
+    }else if (t3 > answer){
+        window.alert("太大了~")
+    }else if (t3 < answer){
+        window.alert("太小了~")
+    }else if(t3 == answer) {
+        window.alert("猜中了~");window.alert("結束遊戲")
+        break;
+    }
+}
+
+})
+
+</script>
+
+<h3>4.輸入西元年，判斷是否是閏年</h3>
+<input type="text" id="year1" placeholder="輸入西元年">
+<input type="button" id="button6" value="判斷">
+<div id="div2"></div>
+<script>
+
+let y1=document.getElementById("year1");
+let b6=document.getElementById("button6");
+let theDiv2 = document.getElementById("div2")
+
+b6.addEventListener("click",function(){
+    let yon=((Number(y1.value) % 4));
+    theDiv2.innerHTML = "yon";
+if(yon == 0){
+    document.write("閏年")
+}else  {
+    document.write("平年")
+}
+
+})
+
+</script>
+
+
+
+<h3>5.請畫出九九乘法表</h3>
+<table>
+<script>
+document.write('<table style="border:3px solid green">')
+    for (let i = 1; i <= 9; i++) {
+        //console.log(`i=${i}`);
+        document.write('<tr>')
+        for (let j = 2; j <= 9; j++) {
+            document.write(`<td>${j}*${i}=${j * i}</td>`)
+        }
+        document.write('</tr>')
+    }
+    document.write('</table>')
+
+
+    document.write('<table style="border:3px solid green">')
+    for (let i = 1; i <= 9; i++) {
+        //console.log(`i=${i}`);
+        document.write('<tr>')
+        for (let j = 2; j <= 2; j++) {
+            document.write(`<td>${i}*${j}=${i * j}</td>`)
+        }
+        document.write('</tr>')
+    }
+    document.write('</table>')
+    //i=1
+    //j=1
+    //j=2
+    //j=3
+    //i=2
+    //j=1
+    //j=2
+    //j=3
+
+</script>
+</table>
+</body>
+
+</html>

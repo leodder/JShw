@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .form {
+            background-image: ;
+        }
+
+        .st1 {
+            display: flex;
+            width: 800px;
+            height: 50px;
+            padding: 5px;
+            margin: 20px;
+            border: 3px solid black;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .t1 {
+            text-align: right;
+            font-size: 20px;
+            width: 150px
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h2>7.溫度轉換器</h2>
+        <label for="text1">攝氏溫度:</label>
+        <input type="text" id="text1" placeholder="輸入攝氏溫度">
+        <label for="text2">華氏溫度:</label>
+        <input type="text" id="text2" placeholder="輸入華氏溫度">
+
+        <script>
+            let t1 = document.getElementById("text1")
+            let t2 = document.getElementById("text2")
+            t1.addEventListener("input", () => {
+                t2.value = Math.floor((t1.value * (9 / 5)) + 32)
+            })
+
+            t2.addEventListener("input", () => {
+                t1.value = Math.floor((t2.value - 32) * (5 / 9))
+            })
+
+        </script>
+    </div>
+    <div>
+        <h2>密碼檢查</h2>
+        <form action="#" method="get" enctype="multipart/form-data">
+
+
+            <div class="st1">
+                <label for="username" class="t1">Username</label>
+                <input type="text" id="username" placeholder="Username" size="16" autofocus autocomplete="off"
+                    maxlength="16">
+                <label for="pwd">Password</label>
+                <input type="password" id="pwd" placeholder="Password" size="16" autofocus autocomplete="off">
+                <input type="button" value="登入">
+                <a href="https://www.mlb.com/">Forget Your Password</a>
+            </div>
+
+            <script></script>
+
+
+    </div>
+
+</body>
+
+</html>
